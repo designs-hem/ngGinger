@@ -1,6 +1,5 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from 'bootstrap';
 // import '../assets/less/common.less';
@@ -15,11 +14,14 @@ import { OrderOnlineModule } from './order-online/order-online.module';
 import { ContactModule } from './contact/contact.module';
 import { TopHeaderModule } from './top-header/top-header.module';
 import { NavHeaderModule } from './nav-header/nav-header.module';
+import { HttpClientModule} from '@angular/common/http'
+import { CoreModule } from './core/core.module'
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    CoreModule,
     NavHeaderModule,
     HomeModule,
     AboutModule,
@@ -27,7 +29,7 @@ import { NavHeaderModule } from './nav-header/nav-header.module';
     OrderOnlineModule,
     ContactModule,
     TopHeaderModule,
-    HttpModule,
+    HttpClientModule,
     BrowserModule,
     RouterModule.forRoot(APPROUTES)
   ],
