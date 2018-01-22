@@ -16,11 +16,13 @@ import { TopHeaderModule } from './top-header/top-header.module';
 import { NavHeaderModule } from './nav-header/nav-header.module';
 import { HttpClientModule} from '@angular/common/http'
 import { CoreModule } from './core/core.module'
+import { CommonModule } from '@angular/common';
 @NgModule({
   declarations: [
     AppComponent,
   ],
   imports: [
+    CommonModule,
     CoreModule,
     NavHeaderModule,
     HomeModule,

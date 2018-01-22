@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { ApiGatewayService } from '../../core/services/api-gateway.service';
 import { Response } from '@angular/http/src/static_response';
+import { ContentLoaderService } from '../../core/services/content-loader.service'
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -9,12 +9,9 @@ import { Response } from '@angular/http/src/static_response';
 })
 export class AboutComponent implements OnInit {
 
-  private aboutContent: Response;
-  constructor(private apiGatewayService: ApiGatewayService ) { 
-    this.apiGatewayService.get('../../../assets/mocks/about.content.json').subscribe((res: Response)=>{
-      console.log('response recieved', res);
-      this.aboutContent = res;
-    })
+  private aboutContent: {} | string;
+  constructor(private contentLoader: ContentLoaderService,  ) { 
+      this.aboutContent = this.contentLoader.getContent('about');
   }
 
   ngOnInit() { 
