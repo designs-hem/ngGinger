@@ -10,7 +10,7 @@ import { ContentLoaderService } from '../../core/services/content-loader.service
 export class AboutComponent implements OnInit {
 
   private aboutContent: {} | string;
-  constructor(private contentLoader: ContentLoaderService,  ) { 
+  constructor(private contentLoader: ContentLoaderService ) { 
       this.aboutContent = this.contentLoader.getContent('about');
   }
 

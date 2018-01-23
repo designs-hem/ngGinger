@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
+import { ContentLoaderService } from '../../core/services/content-loader.service'
 
 @Component({
   selector: 'app-team',
@@ -7,11 +7,12 @@ import { Title } from '@angular/platform-browser';
   styleUrls: ['./team.component.less']
 })
 export class TeamComponent implements OnInit {
-
-  constructor(private titleService: Title) { }
+  private teamContent: {} | string;
+  constructor(private contentLoader: ContentLoaderService) { }
 
   ngOnInit() {
-    this.titleService.setTitle("GingerClub - Team");
+    this.teamContent = this.contentLoader.getContent('team');
+    // this.titleService.setTitle("GingerClub - Team");
   }
 
 }
