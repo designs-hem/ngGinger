@@ -1,14 +1,15 @@
 
 var copydir = require('copy-dir');
 var path = require('path');
-var argv = require('yargs').argv;
 var process = require('process');
+var argv = process.env.theme;
 var fs = require('fs');
 var root  = path.resolve(__dirname, '../');
-const themeDir = path.resolve(root, '../')+'Themes\\'+argv._[0];
+// console.log('dir', dirs);
+console.log('root',root, process.env.theme);
+const themeDir = path.resolve(root, '../')+'Themes\\'+argv;
 const dirs = getDirectories(themeDir);
-console.log('dir', dirs);
-console.log('root', argv._[0]);
+
 let totalDir = 0;
 function getDirectories(path) {
     return fs.readdirSync(path).filter(function (file) {
@@ -17,9 +18,9 @@ function getDirectories(path) {
   }
   function copyDirs(index){
     if (totalDir > 0) {
-        console.log('source>>>', path.resolve(root, '../')+'Themes\\'+argv._[0]+'\\'+dirs[index]);
+        console.log('source>>>', path.resolve(root, '../')+'Themes\\'+argv+'\\'+dirs[index]);
         console.log('dstination>>>', root+'\\src\\app\\'+dirs[index]+'\\components');
-        copydir(path.resolve(root, '../')+'Themes\\'+argv._[0]+'\\'+dirs[index], root+'\\src\\app\\'+dirs[index]+'\\components', function(err){
+        copydir(path.resolve(root, '../')+'Themes\\'+argv+'\\'+dirs[index], root+'\\src\\app\\'+dirs[index]+'\\components', function(err){
             if(err){
               console.log(err);
             } else {

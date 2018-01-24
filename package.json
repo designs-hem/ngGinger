@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "npm run themechanger && ng serve",
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
@@ -52,7 +52,6 @@
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "^2.5.3",
-    "copy-dir": "^0.3.0",
-    "yargs": "^10.1.1"
+    "copy-dir": "^0.3.0"
   }
 }
