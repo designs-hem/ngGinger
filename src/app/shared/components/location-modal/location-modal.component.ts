@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LocationResponse } from '../../interfaces/location-modal.interface';
 import 'jquery';
-import 'bootstrap/dist/js/bootstrap.bundle.js';
+import 'bootstrap/dist/js/bootstrap.min.js';
 import { LocationService } from '../../../location/services/location.service';
 declare var $: any;
 
