@@ -1,0 +1,12 @@
+<div class="setLocation modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="locationMmDiv">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title"><i class="fa fa-map-marker" aria-hidden="true"></i> Choose Your Location</h4>
+            </div>
+            <div *ngIf = "locationData" class="modal-body locationContainer">
+                <a *ngFor= "let obj of locationData" id ='{{obj.locationId}}' href="#">{{obj.name}} {{obj.restuarentName}}</a>
+            </div>
+        </div>
+    </div>
+</div>

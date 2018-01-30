@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-
+declare var $: any;
 @Component({
   selector: 'app-order-online',
   templateUrl: './order-online.component.html',
@@ -14,6 +14,6 @@ export class OrderOnlineComponent implements OnInit {
 
   ngOnInit() {
     this.titleService.setTitle("GingerClub - Order Online");
-  } 
-
+  }
+  
 }

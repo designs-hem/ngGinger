@@ -17,13 +17,15 @@ import { NavHeaderModule } from './nav-header/nav-header.module';
 import { HttpClientModule} from '@angular/common/http'
 import { CoreModule } from './core/core.module'
 import { CommonModule } from '@angular/common';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     CommonModule,
     CoreModule,
+    SharedModule,
     NavHeaderModule,
     HomeModule,
     AboutModule,

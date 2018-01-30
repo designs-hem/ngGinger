@@ -12,24 +12,8 @@
             <!-- <span class="mobileLocation hidden-md hidden-lg col-xs-1 noPadding text-right">
                 <i class="fa fa-map-marker" aria-hidden="true" data-toggle="modal" data-target=".setLocation"></i>
             </span> -->
-            <div class="col-xs-12 col-md-9 location" id="locationDiv">
-                <button class="hidden-xs hidden-sm btn btn-default btn-sm" type="button" id="location" data-toggle="modal" data-target=".setLocation">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i> Choose Your Location
-                    <span class="caret"></span>
-                </button>
-                <div class="setLocation modal fade bs-example-modal-sm" tabindex="-1" role="dialog" id="locationMmDiv">
-                    <div class="modal-dialog modal-sm" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header text-center">
-                                <h4 class="modal-title"><i class="fa fa-map-marker" aria-hidden="true"></i> Choose Your Location</h4>
-                            </div>
-                            <div class="modal-body locationContainer">
-                                <!-- <a id='{{data.locationId}}' href="#">{{data.name}} {{data.restuarentName}}</a> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <location-selector></location-selector>
+            <location-modal *ngIf="locationResponse" [locationData] = "locationResponse"></location-modal>
         </div>
 
         <nav id="menu" class="col-md-6 text-right no-padding-right">
@@ -52,7 +36,7 @@
             <a [routerLink]= "['/home']" >Home</a>
             <a [routerLink]= "['/about']" >About us</a>
             <a [routerLink]= "['/team']" >Team</a>
-            <a [routerLink]= "['/order-online']" >Order Online</a>
+            <a [routerLink]= "['/order-online']" (click)="checkLocation()">Order Online</a>
             <a [routerLink]= "['/contacts']" >Contact us</a>
         </nav>
     </div>
