@@ -16,16 +16,5 @@ export class NavHeaderComponent implements OnInit {
   constructor(private locationService: LocationService){}
  ngOnInit() {
  }
-  private checkLocation(): void {
-    if (this.locationService.isLoacationExist) {
-         $('#locationMmDiv').modal('show');
-    }else {
-      this.locationService.getLocation().subscribe((res: any) => {
-        this.locationResponse = <LocationResponse>res.data;
-        this.locationResponse ? this.locationService.isLoacationExist = true : this.locationService.isLoacationExist = false;
-        $('#locationMmDiv').modal('show');
-      })
-    }
-  }
 
 }

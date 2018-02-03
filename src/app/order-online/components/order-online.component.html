@@ -6,14 +6,31 @@
                 <h5>Our Menu</h5>
             </div>
             <div class="row">
-                <div class="col-md-12 gingerMenus">
-                    <ul id="gingerMenu" class="resp-tabs-list col-md-4 no-padding-left"></ul>
-                    <div class="resp-tabs-container col-md-8 noPadding" id="menuItems"></div>
+                <div class="col-md-12 gingerMenus" >
+                    <ul id="gingerMenu" class="resp-tabs-list col-md-4 no-padding-left">
+                        <li [ngClass]="{'resp-tab-active': i==0, 'resp-tab-item': true}" class="resp-tab-item" 
+                        [attr.aria-controls]="'menu' +menuItem.restMenuId" role="tab" *ngFor = "let menuItem of menuResponse; let i = index">
+                            {{menuItem.name}}
+                        </li>
+                    </ul>
+                    <div class="resp-tabs-container col-md-8 noPadding" id="menuItems" >
+                        <div class= 'resp-tab-content clearfix' [ngClass]="{'resp-tab-content-active': i==0}" id="menu{{menuItem.restMenuId}}" 
+                        [attr.aria-labelledby]="'menu' +menuItem.restMenuId" *ngFor = "let menuItem of menuResponse; let i = index" >
+                            <div class="col-md-6 col-sm-6 hidden-xs recipe text-center" [ngClass] ="{veg: item.isVeg, nonVeg: !item.isVeg}" *ngFor = "let item of menuItem.restMenuItems">
+                                <i class="fa fa-circle" aria-hidden="true"> </i>
+                                <img class="hidden-xs img-responsive" [src]="item.imageLocation!= '' ? imageURLEndPoint+'/'+ item.imageLocation: defaultImgURL">
+                                <h5>{{item.menuItemName}}</h5>
+                                <button id="menuItem{{item.restMenuItemId}}" type="button" class="btn-sm btn btn-primary cart text-uppercase"><i class= "fa fa-shopping-cart" aria-hidden= "true"> </i>QR {{item.price}}</button>
+                                <!-- p class="col-md-12 noPadding text-justify hidden-xs">{{description}}</p -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
+    <location-modal *ngIf="locationResponse" [locationData] = "locationResponse" (locationFoundEvent) = "locationModalExist()"
+        (locationSelectEvent) = "locationSelectionEvent($event)"></location-modal>
     <div class="hidden-md hidden-lg stickyCart">
         <div class="col-xs-8 mobileYourCart">
             <h5>

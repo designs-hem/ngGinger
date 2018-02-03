@@ -13,7 +13,7 @@
                 <i class="fa fa-map-marker" aria-hidden="true" data-toggle="modal" data-target=".setLocation"></i>
             </span> -->
             <location-selector></location-selector>
-            <location-modal *ngIf="locationResponse" [locationData] = "locationResponse"></location-modal>
+            
         </div>
 
         <nav id="menu" class="col-md-6 text-right no-padding-right">
@@ -36,7 +36,7 @@
             <a [routerLink]= "['/home']" >Home</a>
             <a [routerLink]= "['/about']" >About us</a>
             <a [routerLink]= "['/team']" >Team</a>
-            <a [routerLink]= "['/order-online']" (click)="checkLocation()">Order Online</a>
+            <a [routerLink]= "['/order-online']">Order Online</a>
             <a [routerLink]= "['/contacts']" >Contact us</a>
         </nav>
     </div>

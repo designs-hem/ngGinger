@@ -10,11 +10,11 @@ export class ApiGatewayService {
 
   constructor(private http: HttpClient) { }
 
-  public get(endPoint: string, queryParam?: string, headers?: HttpHeaders): Observable<any> {
-    return this.http.get<Response>(endPoint);
+  public get(endPoint: string, queryParam?: {}, headers?: HttpHeaders): Observable<any> {
+    return this.http.get<Response>(endPoint, { params: queryParam });
   }
 
-  public post(endPoint: string, payload?: string, headers?: HttpHeaders): Observable<any> {
+  public post(endPoint: string, payload?: {}, headers?: HttpHeaders): Observable<any> {
     const httpOptions = {
         headers: headers? headers: new HttpHeaders({ 'Content-Type': 'application/json' })
     }
