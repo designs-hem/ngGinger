@@ -1,7 +1,7 @@
 
 export const SETTINGS = {
 
-    ENDPOINT: 'http://localhost:8080/GingerClub/',
+    ENDPOINT: 'http://gingerclubqatar.com/GingerClub/',
     CONTENTPATH: 'assets/mocks/'
     
 
