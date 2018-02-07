@@ -37,58 +37,5 @@
     </div>
     <location-modal *ngIf="locationResponse" [locationData] = "locationResponse" (locationFoundEvent) = "locationModalExist()"
         (locationSelectEvent) = "locationSelectionEvent($event)"></location-modal>
-    <div class="hidden-md hidden-lg stickyCart">
-        <div class="col-xs-8 mobileYourCart">
-            <h5>
-                Your Cart
-                <span class="totalCount"></span>
-            </h5>
-            <small class="text-uppercase itemTotl"></small>
-        </div>
-        <div class="col-xs-4 no-padding-right">
-            <button type="button" class="mCheckout hidden-md hidden-lg btn btn-success" value="" data-toggle="modal" data-target=".userLogin">
-                Checkout
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-            </button>
-        </div>
-    </div>
-
-    <div class="col-md-4 gBox hidden-xs noCartinfo text-center">
-        <h6>No item added in Cart</h6>
-        <i class="fa fa-2x fa-smile-o" aria-hidden="true"></i>
-    </div>
-    
-    <div class="col-md-4 basket padding-bottom hidden">
-        <div class="menuGrid">
-            <span class="col-md-12 noPadding topHead">
-                <h5>Your Orders</h5>
-                <small class="totalCount pull-right"></small>
-                <small class="pull-right">Total No. Item: </small>
-            </span>
-            <div class="col-md-12 cart-items noPadding">
-                <div class="table-responsive" style="border: 1px solid #dddddd">
-                    <table class="table table-condensed table-striped" style="margin: 0">
-                        <thead>
-                            <th>Recipes</th>
-                            <th>Qty</th>
-                            <th class="text-center">Price</th>
-                            <th></th>
-                        </thead>
-                        <tbody id="checkOutTbl" class="table-striped"></tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="col-md-12 pricing-detail noPadding text-right">
-                <h5>
-                    <strong>Item Total:
-                        <span class="itemTotl text-uppercase"></span>
-                    </strong>
-                </h5>
-            </div>
-            <button id="checkOut" type="button" class="btn col-md-12 btn-lg btn-success hidden-xs hidden-sm">
-                Checkout
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-            </button>
-        </div>
-    </div>
+        <app-cart></app-cart>
 </div>
