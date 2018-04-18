@@ -6,20 +6,23 @@ import { EventEmitter } from 'events';
 import { OrderOnlineService } from '../services/order-online.service';
 import { SETTINGS } from '../../../environments/settings';
 import '../../../assets/js/easyTabs.js';
+import { MainMenuInterface } from '../../shared/interfaces/main-menu-interface';
+
 declare var $: any;
 @Component({
   selector: 'app-order-online',
   templateUrl: './order-online.component.html',
   styleUrls: ['./order-online.component.less']
 })
-export class OrderOnlineComponent implements OnInit  {
+export class OrderOnlineComponent implements OnInit {
+  public mainMenuItems: [MainMenuInterface];
   private locationResponse: LocationResponse;
   private menuResponse;
   private imageURLEndPoint: string;
   private defaultImgURL: string;
 
   constructor(
-    private titleService: Title, 
+    private titleService: Title,
     private locationService: LocationService,
     private orderOnlineService: OrderOnlineService) {
     this.imageURLEndPoint = SETTINGS.ENDPOINT + 'ginger_menu_item_images';
@@ -27,13 +30,13 @@ export class OrderOnlineComponent implements OnInit  {
   }
 
   ngOnInit() {
-    this.titleService.setTitle("GingerClub - Order Online");
+    this.titleService.setTitle('GingerClub - Order Online');
     if (!this.locationService.isLoacationExist) {
       this.locationService.getLocation().subscribe((res: any) => {
         this.locationResponse = <LocationResponse>res.data;
         this.locationResponse ? this.locationService.isLoacationExist = true : this.locationService.isLoacationExist = false;
-      })
-    }else {
+      });
+    } else {
       this.loadMenu();
     }
   }
@@ -48,17 +51,20 @@ export class OrderOnlineComponent implements OnInit  {
   private loadMenu(): void {
     $('#locationMmDiv').modal('hide');
     this.orderOnlineService.getAllMenuItems(this.locationService.currentLocationId).subscribe((res: any) => {
-      console.log("response recieved for order online", res);
+      console.log('response recieved for order online', res);
       this.menuResponse = res.data;
-      setTimeout(()=> {
+      this.mainMenuItems = this.menuResponse.map((menuItem) =>
+        <MainMenuInterface>{ name: menuItem.name, restMenuId: menuItem.restMenuId });
+
+      setTimeout(() => {
         $('.gingerMenus').easyResponsiveTabs({
           type: 'vertical',
           width: 'auto',
           fit: true
         });
       }, 0);
-      
-    })
+
+    });
   }
-  
+
 }

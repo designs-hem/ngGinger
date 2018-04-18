@@ -1,41 +1,39 @@
 <div class="container gingerRecipes">
-    <div class="col-md-8 selectMenu  no-padding-left">
-        <div class="menuGrid">
-            <div class="panel deliciousRecipes text-center hidden-xs hidden-sm">
-                <img class="img-responsive" src="assets/img/spoon.png" width="24px">
-                <h5>Our Menu</h5>
+  <div class="col-md-8 selectMenu  no-padding-left">
+    <div class="menuGrid">
+      <div class="panel deliciousRecipes text-center hidden-xs hidden-sm">
+        <img class="img-responsive" src="assets/img/spoon.png" width="24px">
+        <h5>Our Menu</h5>
+      </div>
+      <div class="row">
+        <div class="col-md-12 gingerMenus">
+          <app-main-menu-container [mainMenuItems]="mainMenuItems"></app-main-menu-container>
+          <div class="resp-tabs-container col-md-8 noPadding" id="menuItems">
+            <div class='resp-tab-content clearfix' [ngClass]="{'resp-tab-content-active': i==0}" id="menu{{menuItem.restMenuId}}" [attr.aria-labelledby]="'menu' +menuItem.restMenuId"
+              *ngFor="let menuItem of menuResponse; let i = index">
+              <div class="col-md-6 col-sm-6 hidden-xs recipe text-center" [ngClass]="{veg: item.isVeg, nonVeg: !item.isVeg}" *ngFor="let item of menuItem.restMenuItems">
+                <i class="fa fa-circle" aria-hidden="true"> </i>
+                <img class="hidden-xs img-responsive" [src]="item.imageLocation!= '' ? imageURLEndPoint+'/'+ item.imageLocation: defaultImgURL">
+                <h5>{{item.menuItemName}}</h5>
+                <button id="menuItem{{item.restMenuItemId}}" type="button" class="btn-sm btn btn-primary cart text-uppercase">
+                  <i class="fa fa-shopping-cart" aria-hidden="true"> </i>QR {{item.price}}
+                </button>
+                <!-- p class="col-md-12 noPadding text-justify hidden-xs">{{description}}</p -->
+              </div>
+              <div class="col-xs-12 hidden-sm hidden-md hidden-lg recipe rm" [ngClass]="{veg: item.isVeg, nonVeg: !item.isVeg}" *ngFor="let item of menuItem.restMenuItems">
+                <span class="col-xs-9 no-padding-left">
+                  <h5>{{item.menuItemName}}</h5>
+                </span>
+                <button id="menuItem{{item.restMenuItemId}}" type="button" class="btn-sm col-xs-3 btn btn-primary cart text-uppercase">
+                  <i class="fa fa-shopping-cart" aria-hidden="true"> </i>QR {{item.price}}
+                </button>
+              </div>
             </div>
-            <div class="row">
-                <div class="col-md-12 gingerMenus" >
-                    <ul id="gingerMenu" class="resp-tabs-list col-md-4 no-padding-left">
-                        <li [ngClass]="{'resp-tab-active': i==0, 'resp-tab-item': true}" class="resp-tab-item" 
-                        [attr.aria-controls]="'menu' +menuItem.restMenuId" role="tab" *ngFor = "let menuItem of menuResponse; let i = index">
-                            {{menuItem.name}}
-                        </li>
-                    </ul>
-                    <div class="resp-tabs-container col-md-8 noPadding" id="menuItems" >
-                        <div class= 'resp-tab-content clearfix' [ngClass]="{'resp-tab-content-active': i==0}" id="menu{{menuItem.restMenuId}}" 
-                        [attr.aria-labelledby]="'menu' +menuItem.restMenuId" *ngFor = "let menuItem of menuResponse; let i = index" >
-                            <div class="col-md-6 col-sm-6 hidden-xs recipe text-center" [ngClass] ="{veg: item.isVeg, nonVeg: !item.isVeg}" *ngFor = "let item of menuItem.restMenuItems">
-                                <i class="fa fa-circle" aria-hidden="true"> </i>
-                                <img class="hidden-xs img-responsive" [src]="item.imageLocation!= '' ? imageURLEndPoint+'/'+ item.imageLocation: defaultImgURL">
-                                <h5>{{item.menuItemName}}</h5>
-                                <button id="menuItem{{item.restMenuItemId}}" type="button" class="btn-sm btn btn-primary cart text-uppercase"><i class= "fa fa-shopping-cart" aria-hidden= "true"> </i>QR {{item.price}}</button>
-                                <!-- p class="col-md-12 noPadding text-justify hidden-xs">{{description}}</p -->
-                            </div>
-                            <div class="col-xs-12 hidden-sm hidden-md hidden-lg recipe rm" [ngClass] ="{veg: item.isVeg, nonVeg: !item.isVeg}" *ngFor = "let item of menuItem.restMenuItems">
-                                <span class="col-xs-9 no-padding-left">
-                                    <h5>{{item.menuItemName}}</h5>
-                                </span>
-                                <button id="menuItem{{item.restMenuItemId}}" type="button" class="btn-sm col-xs-3 btn btn-primary cart text-uppercase"><i class= "fa fa-shopping-cart" aria-hidden= "true"> </i>QR {{item.price}}</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+      </div>
     </div>
-    <location-modal *ngIf="locationResponse" [locationData] = "locationResponse" (locationFoundEvent) = "locationModalExist()"
-        (locationSelectEvent) = "locationSelectionEvent($event)"></location-modal>
-        <app-cart></app-cart>
+  </div>
+  <location-modal *ngIf="locationResponse" [locationData]="locationResponse" (locationFoundEvent)="locationModalExist()" (locationSelectEvent)="locationSelectionEvent($event)"></location-modal>
+  <app-cart></app-cart>
 </div>

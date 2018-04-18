@@ -7,11 +7,13 @@ import { LocationModule } from '../location/location.module';
 import { SharedModule } from '../shared/shared.module';
 import { OrderOnlineService } from './services/order-online.service';
 import { CartComponent } from './components/cart/cart.component';
+import { MainMenuContainerComponent } from './components/main-menu-container/main-menu-container.component';
 @NgModule({
     imports: [LocationModule, SharedModule, CommonModule],
     declarations: [
         OrderOnlineComponent,
-        CartComponent
+        CartComponent,
+        MainMenuContainerComponent
     ],
     providers: [ OrderOnlineService ]
   })

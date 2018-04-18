@@ -1,0 +1,7 @@
+<ul id="gingerMenu" class="resp-tabs-list col-md-4 no-padding-left">
+  <li [ngClass]="{'resp-tab-active': i==0, 'resp-tab-item': true}" 
+    class="resp-tab-item" [attr.aria-controls]="'menu' +menuItem.restMenuId"
+    role="tab" *ngFor="let menuItem of mainMenuItems; let i = index">
+    {{menuItem.name}}
+  </li>
+</ul>
