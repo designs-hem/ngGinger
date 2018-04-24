@@ -4,7 +4,6 @@ import { LocationService } from '../../location/services/location.service';
 import { LocationResponse } from '../../shared/interfaces/location-modal.interface';
 import { EventEmitter } from 'events';
 import { OrderOnlineService } from '../services/order-online.service';
-import { SETTINGS } from '../../../environments/settings';
 import '../../../assets/js/easyTabs.js';
 import { MainMenuInterface } from '../../shared/interfaces/main-menu-interface';
 
@@ -18,15 +17,10 @@ export class OrderOnlineComponent implements OnInit {
   public mainMenuItems: [MainMenuInterface];
   private locationResponse: LocationResponse;
   private menuResponse;
-  private imageURLEndPoint: string;
-  private defaultImgURL: string;
-
   constructor(
     private titleService: Title,
     private locationService: LocationService,
     private orderOnlineService: OrderOnlineService) {
-    this.imageURLEndPoint = SETTINGS.ENDPOINT + 'ginger_menu_item_images';
-    this.defaultImgURL = '../../../assets/img/noImage.jpg';
   }
 
   ngOnInit() {

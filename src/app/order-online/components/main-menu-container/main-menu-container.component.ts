@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { MainMenuInterface } from '../../../shared/interfaces/main-menu-interface';
 
 @Component({
   selector: 'app-main-menu-container',
@@ -6,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./main-menu-container.component.less']
 })
 export class MainMenuContainerComponent implements OnInit {
-  @Input() mainMenuItems: string;
+  @Input() mainMenuItems: [MainMenuInterface];
 
   constructor() { }
 
