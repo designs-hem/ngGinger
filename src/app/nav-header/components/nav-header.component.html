@@ -1,0 +1,44 @@
+<header>
+    <div class="container">
+        <!-- <h3 class="hidden-md hidden-lg mobileMenu noPadding col-xs-1">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+        </h3> -->
+        <div class="logo col-xs-11 col-md-6 noPadding">
+            <a class="col-xs-11 text-center col-md-3 noPadding" routerLink="/home">
+                <img class="img-responsive" src="assets/img/logo.png">
+            </a>
+
+            <!-- <span class="mobileLocation hidden-md hidden-lg col-xs-1 noPadding text-right">
+                <i class="fa fa-map-marker" aria-hidden="true" data-toggle="modal" data-target=".setLocation"></i>
+            </span> -->
+            <location-selector></location-selector>
+            
+        </div>
+
+        <nav id="menu" class="col-md-6 text-right no-padding-right">
+            <!-- <div class="myAccount mobile text-center hidden-md hidden-lg">
+                <ul class="hidden noPadding">
+                    <li class="userName"></li>
+                    <li>
+                        <a href="#myaccount" class="tab_20">
+                            <i class="fa fa-user" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#home" class="logOut">
+                            <i class="fa fa-power-off" aria-hidden="true"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div> -->
+
+            <a [routerLink]= "['/home']" >Home</a>
+            <a [routerLink]= "['/about']" >About us</a>
+            <a [routerLink]= "['/team']" >Team</a>
+            <a [routerLink]= "['/order-online']">Order Online</a>
+            <a [routerLink]= "['/contacts']" >Contact us</a>
+        </nav>
+    </div>
+</header>
+

@@ -1,0 +1,27 @@
+<div id='aboutUs'>
+  <div class="container gBox">
+    <img src="assets/img/team.jpg" class="col-md-4 no-padding-left img-responsive" alt="GingerClub" />
+    <div class="col-md-8 noPadding">
+      <h4 class="text-center" style="color:#ABCA4E; margin-top: 0;">{{aboutContent.title}}</h4>
+      <p *ngFor="let p of aboutContent.content">{{p}}</p>
+    </div>
+    <div class="col-md-12 noPadding info text-center">
+      <div class="col-md-3 no-padding-left">
+        <i class="fa fa-map fa-2x" aria-hidden="true"></i>
+        <span>2 Locations in Qatar</span>
+      </div>
+      <div class="col-md-3 no-padding-left">
+        <i class="fa fa-spoon fa-2x" aria-hidden="true"></i>
+        <span>Thai & Chinese Cuisine</span>
+      </div>
+      <div class="col-md-3 no-padding-left">
+        <i class="fa fa-clock-o fa-2x" aria-hidden="true"></i>
+        <span id="parking">Mon-Sun 11:00 - 23:00</span>
+      </div>
+      <div class="col-md-3 no-padding-left">
+        <i class="fa fa-car fa-2x" aria-hidden="true"></i>
+        <span id="parking">Parking - Yes</span>
+      </div>
+    </div>
+  </div>
+</div>

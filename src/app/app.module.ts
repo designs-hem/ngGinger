@@ -1,43 +1,43 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from 'bootstrap';
 // import '../assets/less/common.less';
 // import '../assets/less/responsive.less';
-
-import { GingerHeaderComponent } from './ginger-header/ginger-header.component';
-import { HomeComponent } from './home/home.component';
-import { AboutComponent } from './about/about.component';
 import { Component } from '@angular/core/src/metadata/directives';
-import { TeamComponent } from './team/team.component';
-import { OrderOnlineComponent } from './order-online/order-online.component';
-import { ContactComponent } from './contact/contact.component';
-import { TopHeaderComponent } from './top-header/top-header.component';
-
+import { APPROUTES } from './app.routes';
+import { AppComponent } from './app.component';
+import { HomeModule } from './home/home.module';
+import { AboutModule } from './about/about.module';
+import { TeamModule } from './team/team.module';
+import { OrderOnlineModule } from './order-online/order-online.module';
+import { ContactModule } from './contact/contact.module';
+import { TopHeaderModule } from './top-header/top-header.module';
+import { NavHeaderModule } from './nav-header/nav-header.module';
+import { HttpClientModule} from '@angular/common/http';
+import { CoreModule } from './core/core.module';
+import { CommonModule } from '@angular/common';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
-    GingerHeaderComponent,
-    HomeComponent,
-    AboutComponent,
-    TeamComponent,
-    OrderOnlineComponent,
-    ContactComponent,
-    TopHeaderComponent
+    AppComponent
   ],
   imports: [
-    HttpModule,
+    CommonModule,
+    CoreModule,
+    SharedModule,
+    NavHeaderModule,
+    HomeModule,
+    AboutModule,
+    TeamModule,
+    OrderOnlineModule,
+    ContactModule,
+    TopHeaderModule,
+    HttpClientModule,
     BrowserModule,
-    RouterModule.forRoot([
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent },
-      { path: 'about', component: AboutComponent },
-      { path: 'team', component: TeamComponent },
-      { path: 'order-online', component: OrderOnlineComponent },
-      { path: 'contacts', component: ContactComponent }
-    ])
+    RouterModule.forRoot(APPROUTES)
   ],
   providers: [Title],
-  bootstrap: [TopHeaderComponent, GingerHeaderComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -19,13 +19,14 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "../node_modules/bootstrap/dist/css/bootstrap.css",
+        "../src/assets/less/bootstrap.css",
         "../node_modules/font-awesome/css/font-awesome.min.css",
-        "../src/assets/less/common.less"
+        "../src/assets/less/common.less",
+        "../src/assets/less/easyTabs.css"
       ],
       "scripts": [
         "../node_modules/jquery/dist/jquery.min.js",
-        "../node_modules/bootstrap/dist/js/bootstrap.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js",
         "../node_modules/less/dist/less.min.js"
       ],
       "environmentSource": "environments/environment.ts",

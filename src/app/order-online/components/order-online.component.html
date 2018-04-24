@@ -1,0 +1,18 @@
+<div class="container gingerRecipes">
+  <div class="col-md-8 selectMenu  no-padding-left">
+    <div class="menuGrid">
+      <div class="panel deliciousRecipes text-center hidden-xs hidden-sm">
+        <img class="img-responsive" src="assets/img/spoon.png" width="24px">
+        <h5>Our Menu</h5>
+      </div>
+      <div class="row">
+        <div class="col-md-12 gingerMenus">
+          <app-main-menu-container [mainMenuItems]="mainMenuItems"></app-main-menu-container>
+          <app-main-menu-items-container [menuResponse]="menuResponse"></app-main-menu-items-container>
+        </div>
+      </div>
+    </div>
+  </div>
+  <location-modal *ngIf="locationResponse" [locationData]="locationResponse" (locationFoundEvent)="locationModalExist()" (locationSelectEvent)="locationSelectionEvent($event)"></location-modal>
+  <app-cart></app-cart>
+</div>

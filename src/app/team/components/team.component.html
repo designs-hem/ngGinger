@@ -1,0 +1,24 @@
+<div id="team">
+  <div class="container text-center">
+    <div class="ceo col-md-6">
+      <span></span>
+      <div class="teamDetails">
+        <h4 class="text-uppercase">{{teamContent.ownerInfo}}</h4>
+        <h6 class="text-capitalize">{{teamContent.designation}}</h6>
+        <div class="text-left">
+          <p *ngFor= "let p of teamContent.testimonials.testimonialOwner">{{p}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="chef col-md-6">
+      <span></span>
+      <div class="teamDetails">
+        <h4 class="text-uppercase">{{teamContent.chefInfo}}</h4>
+        <h6 class="text-capitalize">{{teamContent.chefDesignation}}</h6>
+        <div class="text-left">
+          <p *ngFor= "let p of teamContent.testimonials.testimonialChef">{{p}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

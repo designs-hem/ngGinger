@@ -1,0 +1,27 @@
+{
+    "about": {
+        "title": "About - GingerClub",
+        "content": [
+            "Incorporated in 2012, Ginger Club started its operations in Wathnan Mall, Al Rayyan, under the able leadership of Mr. Shajeer P K. Sheer Passion to bring the original and authentic eastern food to the other parts of the world is the motive behind the concept which was named as \"Ginger Club\". With our delicious food and cordial hospitality, we continue to set new industry standards.",
+            "Ginger Club is the destination for Asian cuisine offers a unique menu that's as diverse as the countries the dishes originate in. Pick from a range of tantalizing soups, and steaming dumplings to begin your dining experience. Continue your culinary journey into the Far East with Chinese and Thai to north-east Indian food.",
+            "The company's expansion map has an aggressive strategic roll out plan, which aims to initiate many more Restaurants in Qatar. By offering a wide range of options for dining-be it a value for money destination or fine dining restaurant. We have plans to consider centralized storage units to improve operations and costs efficiencies, building a back-end support system. Our primary focus will be developing and propagating the brand and maintaining service quality. Based on feedback from our customer's we are opening another branch of GingerClubDoha in Pearl Qatar. The Fine dining restaurant is overlooking the Pearl Qatar. We look forward in servicing our esteemed customers with same passion and quality."
+        ]
+    },
+    "team": {
+        "content": [],
+        "ownerInfo": "Shajeer PK",
+        "designation": "Founder",
+        "chefInfo": "Chef. Shankar Ram",
+        "chefDesignation": "Executive Chef",
+        "testimonials": {
+            "testimonialOwner" : ["Shajeer started GingerClubDoha with a sheer passion of serving tasty, hygienic and quality food. Shajeer is actively involved in daily operations of the restaurant. He is a graduate in Hotel and Catering Management from the Rizvi College, Mumbai.",
+            "Having worked at some of the most highly renowned hotels including Marriott International, restaurants, festivals and events in Mumbai, India",
+            "Shajeer influences a service philosophy with a distinct point of view. He strives for every guest to have an experience that transports them."],
+            "testimonialChef": ["I serve what you and your guests enjoy. You'll find all of the trendy Pan-Asian and other ethnic cuisines bursting with the adventurous flavors that you crave for food safety is our top priority. Our store is bright and clean with wide aisles for fast, easy maneuvering. We as a family look after every single thing including, keeping kitchens cooking with the perfect mix of products from seafood to salad dressing, desserts to dairy or even a new chef's knife.", 
+                "Shankar Ram Bishwa Karma, specializing in Chinese &amp; Thai cuisine, with more than nineteen year of professional cooking experience, worked under major five star hotels like RAMADA PLAZA, PALM GROVE (Juhu, Mumbai), HOLIDAY INN (Mumbai)."]
+            }
+    },
+    "contacts": {
+        "content": "Incorporated in 2012, Ginger Club started its operations in Wathnan Mall, Al Rayyan, under the able leadership of Mr. Shajeer P K. Sheer Passion to bring the original and authentic eastern food to the other parts of the world is the motive behind the concept which was named as \"Ginger Club\". With our delicious food and cordial hospitality, we continue to set new industry standards."
+    }
+}
