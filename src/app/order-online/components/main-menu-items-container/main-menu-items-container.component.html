@@ -1,24 +1,9 @@
 
 <div class="resp-tabs-container col-md-8 noPadding" id="menuItems">
-  <div class='resp-tab-content clearfix' [ngClass]="{'resp-tab-content-active': i==0}" id="menu{{menuItem.restMenuId}}" [attr.aria-labelledby]="'menu' +menuItem.restMenuId"
-    *ngFor="let menuItem of menuResponse; let i = index">
-    <div class="col-md-6 col-sm-6 hidden-xs recipe text-center" [ngClass]="{veg: item.isVeg, nonVeg: !item.isVeg}" *ngFor="let item of menuItem.restMenuItems">
-      <i class="fa fa-circle" aria-hidden="true"> </i>
-      <img class="hidden-xs img-responsive" [src]="item.imageLocation!= '' ? imageURLEndPoint+'/'+ item.imageLocation: defaultImgURL">
-      <h5>{{item.menuItemName}}</h5>
-      <button id="menuItem{{item.restMenuItemId}}" type="button" class="btn-sm btn btn-primary cart text-uppercase">
-        <i class="fa fa-shopping-cart" aria-hidden="true"> </i>QR {{item.price}}
-      </button>
-      <!-- p class="col-md-12 noPadding text-justify hidden-xs">{{description}}</p -->
-    </div>
-    <div class="col-xs-12 hidden-sm hidden-md hidden-lg recipe rm" [ngClass]="{veg: item.isVeg, nonVeg: !item.isVeg}" *ngFor="let item of menuItem.restMenuItems">
-      <span class="col-xs-9 no-padding-left">
-        <h5>{{item.menuItemName}}</h5>
-      </span>
-      <button id="menuItem{{item.restMenuItemId}}" type="button" class="btn-sm col-xs-3 btn btn-primary cart text-uppercase">
-        <i class="fa fa-shopping-cart" aria-hidden="true"> </i>QR {{item.price}}
-      </button>
-    </div>
+  <div class='resp-tab-content clearfix' [ngClass]="{'resp-tab-content-active': i == 0}" 
+    id="menu{{mainMenuItem.restMenuId}}" [attr.aria-labelledby]="'menu' + mainMenuItem.restMenuId"
+    *ngFor="let mainMenuItem of menuResponse; let i = index">
+    <app-menu-item [menuItems]="mainMenuItem.restMenuItems"></app-menu-item>
   </div>
 </div>
 

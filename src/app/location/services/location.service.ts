@@ -13,6 +13,6 @@ export class LocationService {
     constructor(private apiService: ApiGatewayService) { }
 
     public getLocation(): Observable<LocationResponse> {
-        return this.apiService.get(SETTINGS.ENDPOINT +'rest/orderOnline/locations');
+        return this.apiService.get(SETTINGS.ENDPOINT + 'rest/orderOnline/locations');
     }
 }

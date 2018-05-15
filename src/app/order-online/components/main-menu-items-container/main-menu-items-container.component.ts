@@ -14,11 +14,12 @@ export class MainMenuItemsContainerComponent implements OnInit {
 
 
   constructor() {
-    this.imageURLEndPoint = SETTINGS.ENDPOINT + 'ginger_menu_item_images';
+    this.imageURLEndPoint = SETTINGS.ENDPOINT + SETTINGS.PATH;
     this.defaultImgURL = '../../../assets/img/noImage.jpg';
    }
 
   ngOnInit() {
+//  initilaize the menuitems model??
   }
 
 }

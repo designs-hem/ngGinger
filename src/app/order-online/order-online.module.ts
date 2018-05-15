@@ -9,13 +9,15 @@ import { OrderOnlineService } from './services/order-online.service';
 import { CartComponent } from './components/cart/cart.component';
 import { MainMenuContainerComponent } from './components/main-menu-container/main-menu-container.component';
 import { MainMenuItemsContainerComponent } from './components/main-menu-items-container/main-menu-items-container.component';
+import { MenuItemComponent } from './components/main-menu-items-container/menu-item/menu-item.component';
 @NgModule({
     imports: [LocationModule, SharedModule, CommonModule],
     declarations: [
         OrderOnlineComponent,
         CartComponent,
         MainMenuContainerComponent,
-        MainMenuItemsContainerComponent
+        MainMenuItemsContainerComponent,
+        MenuItemComponent
     ],
     providers: [ OrderOnlineService ]
   })

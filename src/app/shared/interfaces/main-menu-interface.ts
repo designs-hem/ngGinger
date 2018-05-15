@@ -10,6 +10,5 @@ export interface RestMenuItem {
 }
 export interface MainMenuItemInterface {
     restMenuItems?: [RestMenuItem];
-    isVeg: string;
     restMenuId: string;
 }
