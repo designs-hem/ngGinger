@@ -1,14 +1,14 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
-import { LocationResponse } from "../../shared/interfaces/location-modal.interface";
-import { ApiGatewayService } from "../../core/services/api-gateway.service";
-import { SETTINGS } from "../../../environments/settings";
+import { LocationResponse } from '../../shared/interfaces/location-modal.interface';
+import { ApiGatewayService } from '../../core/services/api-gateway.service';
+import { SETTINGS } from '../../../environments/settings';
 
 @Injectable()
 export class LocationService {
 
-    public isLoacationExist: boolean = false;
+    public isLoacationExist = false;
     public currentLocationId: number;
     constructor(private apiService: ApiGatewayService) { }
 
