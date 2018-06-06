@@ -13,8 +13,8 @@ declare var $: any;
 export class NavHeaderComponent implements OnInit {
   private locationResponse: LocationResponse;
 
-  constructor(private locationService: LocationService){}
- ngOnInit() {
- }
+  constructor(private locationService: LocationService) { }
+  ngOnInit() {
+  }
 
 }

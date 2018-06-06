@@ -8,7 +8,7 @@ import { SETTINGS } from '../../../environments/settings';
 @Injectable()
 export class LocationService {
 
-    public isLoacationExist = false;
+    public isLocationExist = false;
     public currentLocationId: number;
     constructor(private apiService: ApiGatewayService) { }
 

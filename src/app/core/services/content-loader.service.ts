@@ -7,9 +7,9 @@ import { Response } from '@angular/http/src/static_response';
 export class ContentLoaderService {
   public appContent: Response;
   constructor(private apiGatewayService: ApiGatewayService) {}
-  
+
   public loadContent() {
-    this.apiGatewayService.get('../../../assets/mocks/app.content.json').subscribe((res: Response)=>{
+    this.apiGatewayService.get('../../../assets/mocks/app.content.json').subscribe((res: Response) => {
       console.log('response recieved', res);
       this.appContent = res;
     });

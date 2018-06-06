@@ -25,10 +25,10 @@ export class OrderOnlineComponent implements OnInit {
 
   ngOnInit() {
     this.titleService.setTitle('GingerClub - Order Online');
-    if (!this.locationService.isLoacationExist) {
+    if (!this.locationService.isLocationExist) {
       this.locationService.getLocation().subscribe((res: any) => {
         this.locationResponse = <LocationResponse>res.data;
-        this.locationResponse ? this.locationService.isLoacationExist = true : this.locationService.isLoacationExist = false;
+        this.locationResponse ? this.locationService.isLocationExist = true : this.locationService.isLocationExist = false;
       });
     } else {
       this.loadMenu();

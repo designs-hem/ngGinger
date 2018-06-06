@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Response } from '@angular/http/src/static_response';
-import { ContentLoaderService } from '../../core/services/content-loader.service'
+import { ContentLoaderService } from '../../core/services/content-loader.service';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -10,11 +10,11 @@ import { ContentLoaderService } from '../../core/services/content-loader.service
 export class AboutComponent implements OnInit {
 
   private aboutContent: {} | string;
-  constructor(private contentLoader: ContentLoaderService ) { 
+  constructor(private contentLoader: ContentLoaderService ) {
       this.aboutContent = this.contentLoader.getContent('about');
   }
 
-  ngOnInit() { 
+  ngOnInit() {
     // this.titleService.setTitle("GingerClub - About Us");
   }
 

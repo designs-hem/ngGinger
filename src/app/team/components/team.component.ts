@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ContentLoaderService } from '../../core/services/content-loader.service'
+import { ContentLoaderService } from '../../core/services/content-loader.service';
 
 @Component({
   selector: 'app-team',

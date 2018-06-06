@@ -1,7 +1,7 @@
-import { Injectable } from "@angular/core";
-import { Observable } from "rxjs/Observable";
-import { HttpClient, HttpHeaders} from '@angular/common/http'
-import { Response } from "@angular/http/src/static_response";
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { Response } from '@angular/http/src/static_response';
 
 
 
@@ -16,8 +16,8 @@ export class ApiGatewayService {
 
   public post(endPoint: string, payload?: {}, headers?: HttpHeaders): Observable<any> {
     const httpOptions = {
-        headers: headers? headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-    }
+        headers: headers ? headers : new HttpHeaders({ 'Content-Type': 'application/json' })
+    };
     return this.http.post<Response>(endPoint, payload);
   }
 

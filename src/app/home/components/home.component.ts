@@ -16,12 +16,12 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     $(document).ready(function () {
       $('.flexslider').flexslider({
-        animation: "slide",
+        animation: 'slide',
         controlNav: false,
         animationLoop: true
       });
     });
 
-    this.titleService.setTitle("GingerClub");
+    this.titleService.setTitle('GingerClub');
   }
 }

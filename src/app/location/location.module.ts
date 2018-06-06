@@ -1,13 +1,13 @@
 
-import { NgModule } from '@angular/core'
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LocationComponent } from './components/location.component';
 import { SharedModule } from '../shared/shared.module';
 import { LocationService } from './services/location.service';
 
 @NgModule({
-    imports: [ 
-        CommonModule, 
+    imports: [
+        CommonModule,
         SharedModule
     ],
     declarations: [
@@ -16,7 +16,7 @@ import { LocationService } from './services/location.service';
     exports: [ LocationComponent],
     providers: [ LocationService ]
   })
-  export class LocationModule { 
+  export class LocationModule {
       constructor() {
       }
   }
