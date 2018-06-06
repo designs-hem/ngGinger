@@ -4,7 +4,10 @@
   <i class="fa fa-circle" aria-hidden="true"> </i>
   <img class="hidden-xs img-responsive" [src]="item.imageLocation!= '' ? imageURLEndPoint+'/'+ item.imageLocation: defaultImgURL">
   <h5>{{item.menuItemName}}</h5>
-  <button id="menuItem{{item.restMenuItemId}}" type="button" class="btn-sm btn btn-primary cart text-uppercase">
+  <button id="menuItem{{item.restMenuItemId}}" 
+    (click)="addMenuItem(item)" 
+    type="button" 
+    class="btn-sm btn btn-primary cart text-uppercase">
     <i class="fa fa-shopping-cart" aria-hidden="true"> </i>QR {{item.price}}
   </button>
   <!-- p class="col-md-12 noPadding text-justify hidden-xs">{{description}}</p -->

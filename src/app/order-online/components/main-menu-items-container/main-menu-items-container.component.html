@@ -1,9 +1,11 @@
 
 <div class="resp-tabs-container col-md-8 noPadding" id="menuItems">
-  <div class='resp-tab-content clearfix' [ngClass]="{'resp-tab-content-active': i == 0}" 
-    id="menu{{mainMenuItem.restMenuId}}" [attr.aria-labelledby]="'menu' + mainMenuItem.restMenuId"
-    *ngFor="let mainMenuItem of menuResponse; let i = index">
-    <app-menu-item [menuItems]="mainMenuItem.restMenuItems"></app-menu-item>
+  <div class='resp-tab-content clearfix' 
+    [ngClass]="{'resp-tab-content-active': i == 0}" 
+    *ngFor="let mainMenuItem of mainMenuItems; let i = index"
+    id="menu{{mainMenuItem.restMenuId}}" 
+    [attr.aria-labelledby]="'menu' + mainMenuItem.restMenuId">
+    <app-menu-item [mainMenuItem]="mainMenuItem"></app-menu-item>
   </div>
 </div>
 

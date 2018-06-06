@@ -3,9 +3,9 @@ export interface LocationResponse{
 }
 
 export interface LocationFields {
-    "locationId": number;
-    "name": string;
-    "latitude" ?:number;
-    "longitude" ?:number;
-    "restuarentName" ?: string;
+    'locationId': number;
+    'name': string;
+    'latitude' ?: number;
+    'longitude' ?: number;
+    'restuarentName' ?: string;
 }
