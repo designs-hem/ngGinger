@@ -12,6 +12,6 @@ export class OrderOnlineService {
         private apiService: ApiGatewayService) { }
 
     public getAllMenuItems(locationId: number): Observable<Response> {
-        return this.apiService.get(SETTINGS.ENDPOINT + 'rest/orderOnline/allItems', { locationId: locationId.toString()});
+        return this.apiService.get(SETTINGS.ENDPOINT +'rest/orderOnline/allItems', { locationId: locationId.toString()});
     }
 }

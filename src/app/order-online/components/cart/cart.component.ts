@@ -1,3 +1,5 @@
+import { CheckOutMenuItem } from './../../../shared/interfaces/main-menu-interface';
+import { CheckOutDataService } from './../../services/check-out-data.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  public checkOutMenuItems: [CheckOutMenuItem];
+
+  constructor(private checkOutDataService: CheckOutDataService) {
+    this.checkOutMenuItems = null;
+  }
 
   ngOnInit() {
+    this.checkOutDataService.checkOutData.subscribe(
+      (checkOutMenuItem: CheckOutMenuItem) => {
+        if (this.checkOutMenuItems) {
+          this.checkOutMenuItems.push(checkOutMenuItem);
+        } else if (checkOutMenuItem) {
+          this.checkOutMenuItems =  [checkOutMenuItem];
+        }
+      }
+    );
   }
 
 }
