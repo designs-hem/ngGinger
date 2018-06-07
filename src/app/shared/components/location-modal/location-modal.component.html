@@ -5,7 +5,11 @@
                 <h4 class="modal-title"><i class="fa fa-map-marker" aria-hidden="true"></i> Choose Your Location</h4>
             </div>
             <div *ngIf = "locationData" class="modal-body locationContainer">
-                <a *ngFor= "let obj of locationData" id ='{{obj.locationId}}' href="javascript:void(0)" (click) = "locationSelectHandler(obj.locationId)">{{obj.name}} {{obj.restuarentName}}</a>
+                <a *ngFor= "let obj of locationData" id ='{{obj.locationId}}' 
+                    href="javascript:void(0)" 
+                    (click) = "locationSelectHandler(obj.locationId)">
+                    {{obj.name}} {{obj.restuarentName}}
+                </a>
             </div>
         </div>
     </div>

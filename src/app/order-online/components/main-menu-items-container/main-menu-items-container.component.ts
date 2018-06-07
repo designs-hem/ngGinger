@@ -8,10 +8,9 @@ import { SETTINGS } from '../../../../environments/settings';
   styleUrls: ['./main-menu-items-container.component.less']
 })
 export class MainMenuItemsContainerComponent implements OnInit {
-  @Input() menuResponse: [MainMenuItemInterface];
+  @Input() mainMenuItems: [MainMenuItemInterface];
   private imageURLEndPoint: string;
   private defaultImgURL: string;
-
 
   constructor() {
     this.imageURLEndPoint = SETTINGS.ENDPOINT + SETTINGS.PATH;
